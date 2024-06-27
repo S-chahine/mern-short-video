@@ -1,0 +1,28 @@
+.videoHeader {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.videoHeader__avatar {
+    margin-right: 10px;
+}
+
+.videoHeader__info {
+    display: flex;
+    align-items: center;
+}
+
+.videoHeader__followButton {
+    margin-left: 10px;
+    background-color: #ff4040;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}

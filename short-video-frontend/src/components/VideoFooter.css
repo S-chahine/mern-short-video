@@ -1,0 +1,22 @@
+.videoFooter {
+    position: absolute;
+    bottom: 40px;
+    left: 10px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.videoFooter__text {
+    display: flex;
+    flex-direction: column;
+}
+
+.videoFooter__ticker {
+    display: flex;
+    align-items: center;
+}
+
+.videoFooter__icon {
+    margin-right: 10px;
+}
