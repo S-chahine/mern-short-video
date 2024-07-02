@@ -19,10 +19,8 @@ app.use(Cors())
 mongoose.connect(connection_url, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-}).then(() => {
-    console.log('MongoDB connected successfully');
-}).catch((error) => {
-    console.error('MongoDB connection error:', error);
+    serverSelectionTimeoutMS: 5000, // Example: Increase server selection timeout
+    socketTimeoutMS: 45000, // Example: Increase socket timeout
 });
 
 //API Endpoints
