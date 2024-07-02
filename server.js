@@ -38,7 +38,7 @@ app.get('/v2/posts', async (req, res) => {
         res.status(200).json(allVideos);
     } catch (err) {
         console.error('Error fetching videos:', err);
-        res.status(500).json({ message: "Failed to fetch videos", error: err });
+        res.status(500).json({ message: "Failed to fetch videos", error: err.message });
     }
 });
 
