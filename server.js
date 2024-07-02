@@ -30,14 +30,15 @@ app.get("/", (req, res) =>
     res.status(200).send("Hello World!"))
 
 // POST endpoint to create a new video
-app.post('/v2/posts', async (req, res) => {
+app.get('/v2/posts', async (req, res) => {
     try {
-        const dbVideos = req.body;
-        const createdVideo = await Videos.create(dbVideos);
-        res.status(201).json(createdVideo);
+        console.log('Fetching videos from MongoDB...');
+        const allVideos = await Videos.find();
+        console.log('Fetched videos:', allVideos);
+        res.status(200).json(allVideos);
     } catch (err) {
-        console.error(err);
-        res.status(500).json({ message: "Failed to create video" });
+        console.error('Error fetching videos:', err);
+        res.status(500).json({ message: "Failed to fetch videos", error: err });
     }
 });
 
