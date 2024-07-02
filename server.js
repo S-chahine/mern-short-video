@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import Videos from './dbModel.js'
 import Cors from 'cors'
 import dotenv from 'dotenv'
+import path from 'path'
 dotenv.config();
 
 //App Config
@@ -45,6 +46,14 @@ app.get('/v2/posts', async (req, res) => {
         console.error(err);
         res.status(500).json({ message: "Failed to fetch videos" });
     }
+});
+
+//production script
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'short-video-frontend', 'build')));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'short-video-frontend', 'build', 'index.html'));
 });
 
 
